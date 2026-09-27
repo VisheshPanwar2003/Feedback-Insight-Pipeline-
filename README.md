@@ -1,11 +1,10 @@
-## Task 2: SQLite Database Setup
+## Task 3: Structured Analytics Module
 
-**Objective:** Persist cleaned feedback data in a relational database for structured querying and analytics.
+**Objective:** Compute quantitative trends to identify underperforming product categories.
 
-**Tech Stack:** Python (`sqlite3`), SQL
+**Tech Stack:** Python, Pandas, SQL
 
 **Key Implementations:**
-* **Schema Design:** Designed a normalized schema (`database/schema.sql`) enforcing data types and constraints.
-* **Idempotent Setup:** Implemented `DROP TABLE IF EXISTS` to allow repeated test runs during development.
-* **Data Loading:** Engineered a loader script (`database/db.py`) to pipe cleaned Pandas DataFrames directly into SQLite using `.to_sql()`.
-* **Verification:** Built an automated verification query to ensure data is correctly aggregated using SQL `GROUP BY`.
+* **SQL Aggregation:** Extracted grouped time-series data calculating average ratings and volume per category.
+* **Pandas Processing:** Built filtering logic (`identify_critical_issues`) to isolate categories falling below acceptable rating thresholds.
+* **Unit Testing:** Implemented automated tests (`tests/test_trends.py`) to verify the Pandas filtering logic independently of the database.
