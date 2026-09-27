@@ -1,10 +1,10 @@
-## Task 5: Semantic Clustering (Unsupervised ML)
+## Task 6: Cluster Interpretation (Centroid Analysis)
 
-**Objective:** Automatically categorize unstructured feedback into meaningful themes without relying on explicit tags or keywords.
+**Objective:** Automatically extract human-readable themes from mathematical vector clusters.
 
-**Tech Stack:** Python, `scikit-learn` (K-Means), Numpy
+**Tech Stack:** Python, `scikit-learn` (Pairwise Distances)
 
 **Key Implementations:**
-* **Unsupervised Grouping:** Applied K-Means clustering to the high-dimensional ChromaDB vectors to group comments with similar semantic meanings.
-* **Array Handling:** Engineered robust data extraction from ChromaDB, handling multi-dimensional NumPy arrays safely for pipeline stability.
-* **Insight Generation:** Successfully separated critical support issues from positive UX feedback entirely based on semantic vector proximity.
+* **Centroid Calculation:** Computed the exact mathematical center of each K-Means cluster using `kmeans.cluster_centers_`.
+* **Representative Extraction:** Utilized `pairwise_distances_argmin_min` to map the geometric centroid back to the closest real customer comment.
+* **Automated Summarization:** Successfully summarized large semantic groups into single, representative sentences without requiring LLM API calls.
