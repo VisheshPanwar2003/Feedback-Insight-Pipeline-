@@ -1,10 +1,9 @@
-## Task 6: Cluster Interpretation (Centroid Analysis)
+## Task 7: End-to-End Orchestration
 
-**Objective:** Automatically extract human-readable themes from mathematical vector clusters.
+**Objective:** Unify quantitative and qualitative modules into a single execution flow.
 
-**Tech Stack:** Python, `scikit-learn` (Pairwise Distances)
+**Tech Stack:** Python
 
 **Key Implementations:**
-* **Centroid Calculation:** Computed the exact mathematical center of each K-Means cluster using `kmeans.cluster_centers_`.
-* **Representative Extraction:** Utilized `pairwise_distances_argmin_min` to map the geometric centroid back to the closest real customer comment.
-* **Automated Summarization:** Successfully summarized large semantic groups into single, representative sentences without requiring LLM API calls.
+* **Pipeline Integration:** Engineered a master orchestrator (`main.py`) that executes SQL aggregations and NLP vector clustering sequentially.
+* **Unified Reporting:** Formatted the outputs of disparate data structures (Pandas DataFrames and Scikit-Learn distance metrics) into a cohesive terminal report for end-users.
