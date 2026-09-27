@@ -1,9 +1,9 @@
-## Task 7: End-to-End Orchestration
+## Task 9: Evaluation Suite
 
-**Objective:** Unify quantitative and qualitative modules into a single execution flow.
+**Objective:** Mathematically validate the quality of the unsupervised machine learning clusters.
 
-**Tech Stack:** Python
+**Tech Stack:** Python, `scikit-learn` (Silhouette Score)
 
 **Key Implementations:**
-* **Pipeline Integration:** Engineered a master orchestrator (`main.py`) that executes SQL aggregations and NLP vector clustering sequentially.
-* **Unified Reporting:** Formatted the outputs of disparate data structures (Pandas DataFrames and Scikit-Learn distance metrics) into a cohesive terminal report for end-users.
+* **Cluster Coherence:** Implemented Silhouette scoring (`evaluation/evaluate.py`) to measure the density and separation of the K-Means semantic clusters.
+* **Automated Thresholds:** Engineered automated warning thresholds to flag when clusters overlap (score < 0.05), indicating a need to adjust hyperparameters (K) or clean the underlying text.
