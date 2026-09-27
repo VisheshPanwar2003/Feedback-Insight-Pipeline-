@@ -1,6 +1,7 @@
 import pandas as pd
 from analytics.trends import get_monthly_category_trends, identify_critical_issues
 from clustering.interpret import get_cluster_representatives
+from llm.explain import generate_executive_summary
 
 def run_insight_pipeline():
     print("===========================================")
@@ -28,10 +29,18 @@ def run_insight_pipeline():
     print("-" * 40)
     if not reps_df.empty:
         pd.set_option('display.max_colwidth', None)
-        # Drop the Cluster_ID for a cleaner executive view
         print(reps_df[['Representative_Comment']].to_string(index=False))
     else:
         print(" ❌ No semantic data available.")
+    print("-" * 40)
+    
+    # --- PHASE 3: LLM Synthesis ---
+    print("\n[3/3] Generating LLM Executive Summary...")
+    summary = generate_executive_summary(critical_issues, reps_df)
+    
+    print(" 🤖 AI EXECUTIVE INSIGHT:")
+    print("-" * 40)
+    print(summary)
     print("-" * 40)
     
     print("\n✅ Pipeline Execution Complete.")
