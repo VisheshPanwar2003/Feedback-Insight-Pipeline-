@@ -1,16 +1,13 @@
-## Task 1: Project Scaffolding & Data Ingestion
+<<<<<<< Task-2
+## Task 2: SQLite Database Setup
 
-**Objective:** Set up the project repository structure and build a robust data pipeline to clean raw customer feedback for downstream processing.
+**Objective:** Persist cleaned feedback data in a relational database for structured querying and analytics.
 
-**Tech Stack:** Python, Pandas
+**Tech Stack:** Python (`sqlite3`), SQL
 
 **Key Implementations:**
-* **Project Scaffolding:** Initialized the directory structure (`analytics/`, `clustering/`, `database/`, `embeddings/`, `evaluation/`, `llm/`) and placeholder files for future tasks.
-* **Raw Data (`data/raw_feedback.csv`):** Ingested a sample dataset containing unstructured feedback, missing values, and anomalies to test the cleaning logic.
-* **Cleaning Pipeline (`ingestion/clean.py`):**
-  * **Missing Value Handling:** Dropped records with missing critical fields and imputed missing categories.
-  * **Data Normalization:** Standardized text fields (lowercasing, stripping whitespace) for consistent grouping.
-  * **Deduplication:** Identified and removed exact duplicate records.
-  * **Outlier Handling:** Enforced strict boundaries on numerical data (filtering out ratings > 5).
-  * **Feature Engineering:** Parsed raw dates and derived a `year_month` column for time-series analysis.
-  * **Pipeline Validation:** Implemented Python `assert` checkpoints to guarantee data integrity before downstream usage.
+* **Schema Design:** Designed a normalized schema (`database/schema.sql`) enforcing data types and constraints.
+* **Idempotent Setup:** Implemented `DROP TABLE IF EXISTS` to allow repeated test runs during development.
+* **Data Loading:** Engineered a loader script (`database/db.py`) to pipe cleaned Pandas DataFrames directly into SQLite using `.to_sql()`.
+* **Verification:** Built an automated verification query to ensure data is correctly aggregated using SQL `GROUP BY`.
+=======
