@@ -1,13 +1,16 @@
-## Task 1: Data Ingestion & Cleaning Pipeline
+## Task 1: Project Scaffolding & Data Ingestion
 
-**Objective:** Establish a robust data pipeline to ingest raw customer feedback and sanitize it for downstream database storage and NLP processing.
+**Objective:** Set up the project repository structure and build a robust data pipeline to clean raw customer feedback for downstream processing.
 
 **Tech Stack:** Python, Pandas
 
 **Key Implementations:**
-* **Missing Value Handling:** Dropped records with missing critical fields (ratings, comments) and imputed missing categorical data (e.g., labeling missing categories as 'uncategorized').
-* **Data Normalization:** Standardized text fields by lowercasing and stripping whitespace to ensure consistent grouping later in the pipeline.
-* **Deduplication:** Identified and removed exact duplicate records to prevent skewed analytics.
-* **Outlier Handling & Constraints:** Enforced strict boundaries on numerical data, filtering out invalid ratings (e.g., ratings > 5).
-* **Feature Engineering:** Parsed raw date strings into datetime objects and derived a `year_month` column to enable time-series trend analysis.
-* **Pipeline Validation:** Implemented strict Python `assert` checkpoints to guarantee data integrity (zero nulls, bounded ratings, no duplicates) before passing data to the next phase.
+* **Project Scaffolding:** Initialized the directory structure (`analytics/`, `clustering/`, `database/`, `embeddings/`, `evaluation/`, `llm/`) and placeholder files for future tasks.
+* **Raw Data (`data/raw_feedback.csv`):** Ingested a sample dataset containing unstructured feedback, missing values, and anomalies to test the cleaning logic.
+* **Cleaning Pipeline (`ingestion/clean.py`):**
+  * **Missing Value Handling:** Dropped records with missing critical fields and imputed missing categories.
+  * **Data Normalization:** Standardized text fields (lowercasing, stripping whitespace) for consistent grouping.
+  * **Deduplication:** Identified and removed exact duplicate records.
+  * **Outlier Handling:** Enforced strict boundaries on numerical data (filtering out ratings > 5).
+  * **Feature Engineering:** Parsed raw dates and derived a `year_month` column for time-series analysis.
+  * **Pipeline Validation:** Implemented Python `assert` checkpoints to guarantee data integrity before downstream usage.
