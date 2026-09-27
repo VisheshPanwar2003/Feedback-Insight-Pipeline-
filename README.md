@@ -1,10 +1,10 @@
-## Task 3: Structured Analytics Module
+## Task 4: Text Embeddings & ChromaDB
 
-**Objective:** Compute quantitative trends to identify underperforming product categories.
+**Objective:** Convert unstructured text into mathematical vectors to enable semantic search and clustering.
 
-**Tech Stack:** Python, Pandas, SQL
+**Tech Stack:** Python, ChromaDB, HuggingFace (`sentence-transformers`)
 
 **Key Implementations:**
-* **SQL Aggregation:** Extracted grouped time-series data calculating average ratings and volume per category.
-* **Pandas Processing:** Built filtering logic (`identify_critical_issues`) to isolate categories falling below acceptable rating thresholds.
-* **Unit Testing:** Implemented automated tests (`tests/test_trends.py`) to verify the Pandas filtering logic independently of the database.
+* **Vectorization:** Integrated the `all-MiniLM-L6-v2` open-source Transformer model to convert text comments into 384-dimensional dense vectors.
+* **Vector Database:** Initialized a local ChromaDB instance to store the embeddings alongside their SQL metadata (category, rating).
+* **Semantic Retrieval:** Verified the pipeline by successfully querying "The app is crashing" to retrieve the comment "App crashes when I try to upload a photo."
