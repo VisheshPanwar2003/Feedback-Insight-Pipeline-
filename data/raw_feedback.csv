@@ -1,0 +1,8 @@
+feedback_id,rating,date,product,category,comment_text
+1,5,2026-03-01,App,UI,Love the new dark mode!
+2,2,2026-03-05,App,Bugs,App crashes when I try to upload a photo.
+3,,2026-03-10,Web,UI,Where did the settings go?
+4,1,2026-03-15,Web,,Delivery was 3 days late.
+5,4,2026-04-02,App,ui,Smooth experience overall.
+2,2,2026-03-05,App,Bugs,App crashes when I try to upload a photo.
+6,6,2026-04-10,Web,Support,Customer service was great.
